@@ -5,7 +5,7 @@
     <title>Documento</title>
     <style>
       body {
-        background-color: black;
+        background-color: lightblue;
         font: normal 19pt Arial;
       }
       header {
@@ -13,7 +13,7 @@
         color: white;
       }
       section {
-        color: black;
+        color: gray;
         width: 600px;
         background-color: white;
         margin: auto;
@@ -28,13 +28,38 @@
         border: solid 1px;
         height: 30px;
         width: 100px;
+        color: blue;
+        border-radius: 5px;
+      }
+      input#avi {
+        color: blue;
+        border: solid blue 1px;
+        border-radius: 5px;
       }
       input.inp {
-        border: solid black 1px;
+        color: blue;
+        border: solid blue 1px;
+        border-radius: 5px;
       }
       footer {
         font-style: italic;
       }
+      
+      input#fullscreen {
+        color: blue;
+        border: solid blue 1px;
+        border-radius: 5px;
+        font-family: 'helvetica neue';
+        helvetica, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        box-shadow: -3px 3px 3px;
+      }
+      
+      span.instagram {
+        font-size: 20px;
+      }
+      
       :fullscreen {
         background-color: black;
       }
@@ -59,8 +84,13 @@
       </div>
       <div id="res"></div>
       <footer>
-        <p>&copy; Guilherme</p>
-           <input type="button" onclick="telacheia()" value="tela cheia">
+        <p>&copy; gui01.ninja</p>
+        <p>
+          <a href="https://instagram.com/_guilherme_modz?igshid=ZDdkNTZiNTM=" target="_blank">
+          <span class="instagram">Meu instagram</span>
+        </a>
+        </p>
+           <input type="button" onclick="telacheia()" value="tela cheia" id="fullscreen">
       </footer>
     </section>
     <script>
@@ -86,8 +116,11 @@
         num.value = ''
         num.focus()
         
-          res.style.background = 'black'
+          res.style.background = 'gray'
           res.style.color = 'blue'
+          res.style.borderRadius = '10px'
+          res.style.padding = '10px'
+          res.style.border = 'solid black 1px'
           
       })
       function telacheia() {
