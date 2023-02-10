@@ -76,7 +76,7 @@
         var fnum = Number(num.value)
         var corpo = window.document.body
         res.innerHTML = ''
-        if (ftxtnum.length == 0 && num.length == 0) {
+        if (ftxtnum.length == 0 || num.value.length == 0) {
           alert('Digite algo antes de repetir')
         } else {
           for(let cont = 1; cont <= fnum; cont += 1) {
