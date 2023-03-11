@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #c6c6c6;
+        color: #373737;
+        font: normal 20pt Arial;
+      }
+      input#btn1 {
+        width: 130px;
+        height: 50px;
+        font-size: 16.90px;
+        letter-spacing: 1px;
+        border: solid blue 1px;
+        border-radius: 3px;
+        color: blue;
+        background-color: #a5a5a5;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Número Aleatório</h1>
+    <p>
+    Aperte o botão abaixo&darr; para gerar um número aleatório entre 0 e 100, tente conseguir gerar o número 0. &#x1F3A9;
+    </p>
+    <input type="button" value="Gerar Número" id="btn1">
+    <div id="res"></div>
+    <script>
+      var btn = document.getElementById("btn1")
+      btn.addEventListener("click", () => {
+        var res = document.getElementById("res")
+        var tempo = new Date()
+        var hora = tempo.getHours()
+        var min = tempo.getMinutes()
+        var seg = tempo.getSeconds()
+        var ano = tempo.getFullYear()
+        var corpo = window.document.body
+        var navegador = window.navigator.appName
+        var num = Math.floor(Math.random() * 100) + 0
+        var p = document.createElement("p")
+        var hr = document.createElement("hr")
+        res.innerHTML = `Número gerado: ${num}<br>`
+        
+        if (num == 0) {
+          var res2 = document.createElement("div")
+          res2.style.backgroundColor = 'green'
+          res2.style.color = 'white'
+          res2.style.borderRadius = '3px'
+          res2.style.width = '199px'
+          res2.style.fontSize = '30px'
+          res2.innerHTML += " Conseguiu!"
+          res.appendChild(res2)
+        }
+        
+        hr.style.backgroundColor = 'blue'
+        p.style.fontSize = '12px'
+        res.appendChild(hr)
+        p.innerHTML += `Hora: ${hora}:${min}:${seg}<br>`
+        p.innerHTML += `Ano: ${ano}<br>`
+        p.innerHTML += "Navegador: " + navegador + "<br>"
+        p.innerHTML += "URL: " + window.document.URL
+        res.appendChild(p)
+      })
+        var div = document.createElement("div")
+        div.style.borderRadius = '5px'
+        div.style.backgroundColor = 'blue'
+        div.style.height = '150px'
+        div.style.width = '150px'
+        div.style.margin = 'auto'
+        div.style.textAlign = 'center'
+        div.style.color = 'white'
+        div.style.lineHeight = "150px"
+        div.style.fontSize = '20px'
+        div.innerText = "Interaja!"
+        document.body.appendChild(div)
+        
+        div.addEventListener("mouseenter", () => {
+          div.innerText = "Entrou!"
+        })
+        
+        div.addEventListener("mouseout", () => {
+          div.innerText = "Saiu!"
+        })
+        
+        div.addEventListener("click", function() {
+        div.innerText = "Clicou!"
+        var sn = window.prompt("Você gostou do programa?(S/N)")
+        if (sn.includes("S") || sn.includes("s")) {
+          alert("Obrigado!")
+        } else if (sn.includes("N") || sn.includes("n")) {
+          alert("Está bem, mas obrigado pela sua opinião")
+        } else if (sn.length == 0) {
+          alert("Vai dizer nada?, Tá tudo bem então")
+        }
+          
+        })
+    </script>
+  </body>
+</html>
